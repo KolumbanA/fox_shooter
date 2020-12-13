@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 708509488}
   - component: {fileID: 708509487}
   - component: {fileID: 708509489}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: platform-long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 776393101}
   - component: {fileID: 776393100}
   - component: {fileID: 776393099}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: platform-long (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 65792
   m_GroundCheck: {fileID: 1062987497}
   m_CeilingCheck: {fileID: 456580554}
   m_CrouchDisableCollider: {fileID: 1081818049}
@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 1662957727}
   - component: {fileID: 1662957726}
   - component: {fileID: 1662957725}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: platform-long (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
