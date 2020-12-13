@@ -99,6 +99,6 @@ MonoBehaviour:
   distance: 0.5
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 98304
   destroyEffect: {fileID: 1657798570406232, guid: 6998aee4d0f833548a4a03fb7209e84a,
     type: 3}

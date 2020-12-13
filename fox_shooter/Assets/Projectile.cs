@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, distance, whatIsSolid);
 
         if(hitInfo.collider != null)
         {
@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
             {
                 Debug.Log("ENEMY HIT");
             }
-            //DestroyProjectile();
+            DestroyProjectile();
         }
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
