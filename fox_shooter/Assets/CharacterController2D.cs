@@ -30,8 +30,15 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+
+	//for flipping weapon
+	private Weapon weapon;
+
+
+
 	private void Awake()
 	{
+		weapon = GameObject.FindObjectOfType<Weapon> ();
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
@@ -115,12 +122,15 @@ public class CharacterController2D : MonoBehaviour
 			{
 				// ... flip the player.
 				Flip();
+				weapon.Flip();
+
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
 			else if (move < 0 && m_FacingRight)
 			{
 				// ... flip the player.
 				Flip();
+				weapon.Flip();
 			}
 		}
 		// If the player should jump...
