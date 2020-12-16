@@ -36,24 +36,11 @@ public class Weapon : MonoBehaviour
 		float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 		
 		
-		//getting the player_movement speed, and flipping the weapon accordingly
-		/*
-		float currentSpeed=0;
-		if(Input.GetButtonDown("a"))
-		{
-			Flip();
-		}
-		if(currentSpeed > 0)
-		{
-			Flip();
-		}
-			*/
-		//--
-		
+	
 		
 		
 		//weapon rotation limitation and flipping
-		Debug.Log(rotZ);
+		//Debug.Log(rotZ);
 		
 		if(rotZ > 90 || rotZ < -90)
 		{

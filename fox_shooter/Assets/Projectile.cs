@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     public float distance;
     public LayerMask whatIsSolid;
     public GameObject destroyEffect;
+	public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,14 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, distance, whatIsSolid);
+		
+
 
         if(hitInfo.collider != null)
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                Debug.Log("ENEMY HIT");
+                hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }
             DestroyProjectile();
         }
