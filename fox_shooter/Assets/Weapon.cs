@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
 	public float startTimeBtwShots;
 	private float timeBtwShots;
 	private SpriteRenderer mySpriteRenderer;
+	public AudioSource ak47Sound;
 
 
 	private bool m_FacingRight = true; 
@@ -61,6 +62,9 @@ public class Weapon : MonoBehaviour
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
+				ak47Sound.Play();
+				
+				
 				Instantiate(projectile, shotPoint.position, transform.rotation);
 				timeBtwShots = startTimeBtwShots;
 			}

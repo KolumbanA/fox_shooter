@@ -9,7 +9,10 @@ public class Enemy : MonoBehaviour
 	private int health;
 	public GameObject deathEffect;
 	public GameObject spawnPoint;
-	
+	public AudioSource hitEffect;
+	public AudioSource deathSoundEffect;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0)
 		{
+			deathSoundEffect.Play();
 			Instantiate(deathEffect, transform.position, Quaternion.identity);
 			//Destroy(gameObject);
 			transform.position = spawnPoint.transform.position;
@@ -36,6 +40,7 @@ public class Enemy : MonoBehaviour
 	
 	public void TakeDamage(int damage)
 	{
+		hitEffect.Play();
 		health -= damage;
 	}
 	
