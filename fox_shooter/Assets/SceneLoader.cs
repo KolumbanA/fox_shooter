@@ -12,9 +12,19 @@ public class SceneLoader : MonoBehaviour
 
     public void QuitGame()
     {
-        //Application.Quit();
+        Debug.Log("Quit");
 
-        //csak azert, hogy lassam
-        Debug.Log("Kilepett");
+        Application.Quit();
     }
+
+    public void ReLoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void ReLoadFirstLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }
