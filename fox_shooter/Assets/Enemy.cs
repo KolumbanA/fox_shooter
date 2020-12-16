@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
-	public int health;
+	public int startingHeath;
+	private int health;
 	public GameObject deathEffect;
+	public GameObject spawnPoint;
+	
     // Start is called before the first frame update
     void Start()
     {
         
     }
+	
+	void Awake()
+	{
+		health = startingHeath;
+	}
 
     // Update is called once per frame
     void Update()
@@ -18,7 +27,9 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
 		{
 			Instantiate(deathEffect, transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			//Destroy(gameObject);
+			transform.position = spawnPoint.transform.position;
+			health = startingHeath;
 		}
     }
 	
@@ -27,4 +38,12 @@ public class Enemy : MonoBehaviour
 	{
 		health -= damage;
 	}
+	
+	private void OnTriggerEnter2D(Collider2D collison)
+    {
+        if ( collison.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene( SceneManager.GetActiveScene().name );
+        }
+    }
 }
